@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="code-icon-png-20.jpg">
+    <link rel="stylesheet" href="edit.css">
+    <title>Editing code</title>
+</head>
+<body>
+    <header>
+        <img src="213-2139206_html5-css-and-javascript-image-html-css-javascript.png" alt="لوغو الموقع">
+        <span>Editing code</span>
+
+    </header>
+   <div id="abood">darck mode <br> <button id="btn1"><form id="a1">
+        <label for="abd">off</label>
+        <input id="abd" type="radio">
+    </form></button><br>
+    <button id="btn2"><form id="a1">
+        <label for="abd1">on</label>
+        <input id="abd1" type="radio">
+    </form></button><br></div>
+    <div class="editor">
+        <div>
+        <font size="4">HTML-CODE</font><br>
+        <span> <textarea id="html-code">
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Editing code</title>
+     </head>
+     <body>
+
+     </body>
+     </html>
+        
+            </textarea></span>
+    </div>
+    <div>
+        <font size="4">CSS-CODE</font><br>
+        <textarea id="css-code"></textarea>
+    </div>
+    <div>
+        <font size="4">JS-CODE</font><br>
+        <textarea id="js-code"></textarea>
+    </div>
+    </div>
+    <div class="editor1">
+        <iframe id="output" frameborder="1"></iframe>
+    </div>
+
+    <script type="text/javascript">
+        let btn1=document.getElementById('btn1')
+        btn1.addEventListener('click',function(){
+            document.body.style.background='white'
+        })
+        let btn2=document.getElementById('btn2')
+        btn2.addEventListener('click',function(){
+            document.body.style.background='#393b44'
+        })
+        function run() {
+            let htmlcode=document.querySelector(".editor #html-code").value;
+            let csscode="<style>"+document.querySelector(".editor #css-code").value +"</style>";
+            let jscode=document.querySelector(".editor #js-code").value;
+            let output=document.querySelector(".editor1 #output");
+            output.contentDocument.body.innerHTML=htmlcode+csscode;
+            output.contentWindo.eval(jscode);
+        }
+        document.querySelector(".editor #html-code").addEventListener("keyup",run);
+        document.querySelector(".editor #css-code").addEventListener("keyup",run);
+        document.querySelector(".editor #js-code").addEventListener("keyup",run);
+    </script>
+</body>
+</html>
